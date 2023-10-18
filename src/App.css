@@ -1,7 +1,7 @@
-.carousel{
+.carousel {
   margin-top: 3rem;
 }
-.title-homepage-product{
+.title-homepage-product {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,12 +64,14 @@
 /* Mengatur ukuran gambar pada layar yang lebih kecil */
 @media (max-width: 768px) {
   .card {
-    max-width: 200px; /* Mengatur lebar maksimum kartu pada layar kecil */
-    max-height: 300px; /* Mengatur tinggi maksimum kartu pada layar kecil */
+    max-width: 100%; /* Mengatur lebar maksimum kartu agar mengisi layar penuh */
+    max-height: unset; /* Hapus tinggi maksimum untuk memungkinkan kartu menyesuaikan kontennya */
+    flex-direction: column; /* Mengubah arah tata letak kartu menjadi vertikal */
   }
 
   .image-products {
-    max-width: 50%; /* Misalnya, gambar akan menjadi setengah dari lebar kartu */
+    max-width: 50%; /* Gambar akan mengisi lebar penuh kartu */
+    height: auto; /* Atur tinggi gambar agar disesuaikan sesuai aspeknya */
   }
 }
 
@@ -286,7 +288,7 @@ img {
   }
 }
 
-button.cart-button{
+button.cart-button {
   background-color: #0099e0;
   color: #ffffff;
   border-radius: 5px;
@@ -295,6 +297,6 @@ button.cart-button{
   font-weight: bolder;
 }
 
-button.cart-button:hover{
+button.cart-button:hover {
   background-color: #25ffe9;
 }
