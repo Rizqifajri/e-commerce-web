@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Sidebar = () => {
+const CartItem = () => {
   return (
     <div>
-      Sidebar
+      
     </div>
   )
 }
 
-export default Sidebar
+export default CartItem

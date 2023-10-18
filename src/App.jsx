@@ -3,21 +3,26 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "../src/pages/HomePage";
 import ProductDetails from "../src/pages/ProductDetails";
-import Product from "./components/ProductContext";
+import Product from "./context/ProductContext";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+  const [testCategory, setTesCategory] = useState("");
+
+  function category(q) {
+    setTesCategory(q);
+  }
+
   return (
     <>
       <Router>
-        <Header />
+        <Header category={category} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage category={testCategory} />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
-        <Sidebar />
         <Footer />
       </Router>
     </>

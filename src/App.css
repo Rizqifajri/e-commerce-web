@@ -1,29 +1,300 @@
-.container-products{
-
-   display: grid;
-   grid-template-columns: repeat(4, minmax(0, 1fr));
-   width: 100%;
-   gap: 2rem;
-   padding: 20px 10px;
-   
-
+.carousel{
+  margin-top: 3rem;
+}
+.title-homepage-product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.card-body{
-    width: 100%;
-    gap: 2rem;
+.container-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 2rem;
+  padding: 20px 10px;
 }
 
-.card-title{
-    font-size: 10px;
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 4px;
+  padding: 5px;
+  height: 100%; /* Agar kartu tetap memiliki tinggi 100% dari container */
 }
 
-
-
-.image-products{
-    width: 100%;
-    height: 50%;
-    object-position: center;
-    object-fit: cover;
+.card-body {
 }
 
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mengatur elemen-elemen agar berada di tengah secara horizontal */
+  justify-content: center; /* Mengatur elemen-elemen agar berada di tengah secara vertikal */
+  overflow: hidden; /* Potong konten jika terlalu panjang */
+  max-height: 500px; /* Atur tinggi maksimum konten */
+}
+
+.btn-card {
+  align-self: flex-end; /* Geser tombol ke bagian bawah */
+  margin-top: 10px; /* Tambahkan margin atas agar ada jarak dengan elemen lainnya */
+}
+
+.card-title {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 0;
+  flex-grow: 1; /* Memastikan judul mengisi ruang vertikal yang tersedia */
+}
+
+/* Ukuran gambar pada layar yang lebih besar */
+.image-products {
+  max-width: 100%;
+  height: 200px; /* Atur tinggi tetap sesuai kebutuhan Anda */
+  object-fit: cover;
+}
+/* Mengatur ukuran gambar pada layar yang lebih kecil */
+@media (max-width: 768px) {
+  .card {
+    max-width: 200px; /* Mengatur lebar maksimum kartu pada layar kecil */
+    max-height: 300px; /* Mengatur tinggi maksimum kartu pada layar kecil */
+  }
+
+  .image-products {
+    max-width: 50%; /* Misalnya, gambar akan menjadi setengah dari lebar kartu */
+  }
+}
+
+.col {
+  margin: 15px;
+}
+
+/* Product details */
+img {
+  max-width: 100%;
+}
+
+.preview {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media screen and (max-width: 996px) {
+  .preview {
+    margin-bottom: 20px;
+  }
+}
+
+.preview-pic {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.preview-thumbnail.nav-tabs {
+  border: none;
+  margin-top: 15px;
+}
+.preview-thumbnail.nav-tabs li {
+  width: 18%;
+  margin-right: 2.5%;
+}
+.preview-thumbnail.nav-tabs li img {
+  max-width: 100%;
+  display: block;
+}
+.preview-thumbnail.nav-tabs li a {
+  padding: 0;
+  margin: 0;
+}
+.preview-thumbnail.nav-tabs li:last-of-type {
+  margin-right: 0;
+}
+
+.tab-content {
+  overflow: hidden;
+}
+.tab-content img {
+  width: 100%;
+  -webkit-animation-name: opacity;
+  animation-name: opacity;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
+.card-details {
+  margin-top: 5rem;
+  background: #ffffff;
+  padding: 3em;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.colors {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.product-title,
+.price,
+.sizes,
+.colors {
+  text-transform: UPPERCASE;
+  font-weight: bold;
+}
+
+.checked,
+.price span {
+  color: #ff9f1a;
+}
+
+.product-title,
+.rating,
+.product-description,
+.price,
+.vote,
+.sizes {
+  margin-bottom: 15px;
+}
+
+.product-title {
+  margin-top: 0;
+}
+
+.size {
+  margin-right: 10px;
+}
+.size:first-of-type {
+  margin-left: 40px;
+}
+
+.color {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 2em;
+  width: 2em;
+  border-radius: 2px;
+}
+.color:first-of-type {
+  margin-left: 20px;
+}
+
+.add-to-cart,
+.like {
+  background: #ff9f1a;
+  padding: 1.2em 1.5em;
+  border: none;
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: #fff;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.add-to-cart:hover,
+.like:hover {
+  background: #b36800;
+  color: #fff;
+}
+
+.not-available {
+  text-align: center;
+  line-height: 2em;
+}
+.not-available:before {
+  font-family: fontawesome;
+  content: "\f00d";
+  color: #fff;
+}
+
+.orange {
+  background: #ff9f1a;
+}
+
+.green {
+  background: #85ad00;
+}
+
+.blue {
+  background: #0076ad;
+}
+
+.tooltip-inner {
+  padding: 1.3em;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+    transform: scale(3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+    transform: scale(3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+button.cart-button{
+  background-color: #0099e0;
+  color: #ffffff;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  font-weight: bolder;
+}
+
+button.cart-button:hover{
+  background-color: #25ffe9;
+}
