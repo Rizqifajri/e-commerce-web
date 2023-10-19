@@ -80,8 +80,8 @@
 }
 
 /* Product details */
-img {
-  max-width: 100%;
+img-product-details{
+  max-width: 10%;
 }
 
 .preview {
