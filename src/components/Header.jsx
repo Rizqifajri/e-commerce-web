@@ -2,7 +2,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 
 
@@ -28,14 +31,16 @@ function Header({category}) {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Category Product" id="basic-nav-dropdown">
-              {/* mapping kategori  */}
               {categories.map((val) => (
                 <NavDropdown.Item onClick={() => handleCategory(val)}>
-                 {val}
+                  {val}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
           </Nav>
+          <NavLink to="/payment" className="cart-button-header">
+            <FontAwesomeIcon icon={faShoppingCart} /> CART
+          </NavLink>
         </Navbar.Collapse>
       </Container>
     </Navbar>

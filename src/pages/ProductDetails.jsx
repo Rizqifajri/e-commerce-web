@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { createContext, useContext } from "react";
 import "../App.css";
@@ -8,17 +8,13 @@ import { CartContext } from "../context/CartContext";
 const ProductDetails = () => {
   const { id } = useParams();
   const products = useContext(ProductContext);
-  
   const product = products.find((product) => product.id === parseInt(id));
   const { addToCart } = useContext(CartContext);
 
   // fungsi handle tambah product pada keranjang
-  const handleAddToCart = () =>{
+  const handleAddToCart = () => {
     addToCart(product);
-    console.log('item added to cart :', product)
-  }
-  
-
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -87,9 +83,10 @@ const ProductDetails = () => {
                     xl
                   </span>
                 </h5>
-                
+
                 <div className="action">
-                  <button onClick={handleAddToCart}
+                  <button
+                    onClick={handleAddToCart}
                     className="cart-button add-to-cart btn btn-default"
                     type="button">
                     Add to cart

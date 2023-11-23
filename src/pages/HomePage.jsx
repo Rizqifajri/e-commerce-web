@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "../components/Slider";
 import CardProduct from "../components/CardProduct";
 import { useContext } from "react";
@@ -10,7 +10,7 @@ import Container from "react-bootstrap/Container";
 import Header from "../components/Header";
 
 const HomePage = ({category}) => {
-  
+
 
   const products = useContext(ProductContext);
   console.log(products);
@@ -18,6 +18,9 @@ const HomePage = ({category}) => {
   const filter = products.filter((state) =>
     state.category.toLowerCase().includes(category.toLowerCase())
   );
+
+
+ 
 
   return (
     <>
