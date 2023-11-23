@@ -28,7 +28,7 @@ export default function PaymentMethod() {
 
   return (
     <>
-      <div className="card mt-5">
+      <div className="card mt-5 mb-5" style={{ marginTop: "10px" }}>
         <div className="row">
           <div className="col-md-8 cart">
             <div className="title">
